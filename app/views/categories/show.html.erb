@@ -1,9 +1,16 @@
+<% Category.roots.each do |cat| %>
+  <li><%= link_to cat.title, cat %></li>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @category.title %>
 </p>
+
+<%= render 'subtree', category: @category.children %>
+
 
 <p>
   <strong>Permalink:</strong>

@@ -1,0 +1,8 @@
+<ul>
+  <% category.each do |cat| %>
+  <li>
+    <%= link_to_unless_current cat.title, cat %>
+    <%= render 'subtree', category: cat.children if cat.children.present? %>
+  </li>
+  <% end %>
+</ul>
